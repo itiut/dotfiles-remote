@@ -2,6 +2,7 @@
 LANG=en_US.UTF-8
 
 # history
+shopt -s histappend
 HISTCONTROL=ignoreboth
 HISTSIZE=10000
 HISTFILESIZE=10000
