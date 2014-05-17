@@ -17,3 +17,8 @@ kugenuma51)
     export PATH=$KUGENUMA51_HOME/opt/mysql/bin:$PATH
     ;;
 esac
+
+# aliases
+alias cp="cp --interactive"
+alias mv="mv --interactive"
+alias rm="rm --interactive"
