@@ -22,3 +22,6 @@ esac
 alias cp="cp --interactive"
 alias mv="mv --interactive"
 alias rm="rm --interactive"
+
+# prevent tty from stopping
+stty stop undef
