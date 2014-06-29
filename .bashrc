@@ -14,7 +14,7 @@ PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 case `hostname` in
 kugenuma51)
     export KUGENUMA51_HOME=/export/home1/tanikawa
-    export PATH=$KUGENUMA51_HOME/bin:$KUGENUMA51_HOME/opt/mysql/bin:$PATH
+    export PATH=$KUGENUMA51_HOME/bin:$KUGENUMA51_HOME/opt/mysql/bin:/opt/centos/devtoolset-1.0/root/usr/bin:$PATH
     ;;
 esac
 
