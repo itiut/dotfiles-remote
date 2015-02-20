@@ -11,12 +11,9 @@ HISTFILESIZE=10000
 PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 
 # host-specific
-case `hostname` in
-kugenuma51)
-    export KUGENUMA51_HOME=/export/home1/tanikawa
-    export PATH=$KUGENUMA51_HOME/bin:$KUGENUMA51_HOME/opt/mysql/bin:/opt/centos/devtoolset-1.0/root/usr/bin:$PATH
-    ;;
-esac
+if [ -f "$HOME/.bashrc.$(hostname)" ]; then
+    source "$HOME/.bashrc.$(hostname)"
+fi
 
 # aliases
 alias cp="cp --interactive"

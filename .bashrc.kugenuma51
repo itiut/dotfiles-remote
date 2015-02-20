@@ -1,0 +1,2 @@
+export HOME1=/export/home1/$USER
+export PATH=$HOME1/bin:/opt/pgsql/bin:$PATH
