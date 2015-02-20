@@ -16,9 +16,9 @@ if [ -f "$HOME/.bashrc.$(hostname)" ]; then
 fi
 
 # aliases
-alias cp="cp --interactive"
-alias mv="mv --interactive"
-alias rm="rm --interactive"
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
 
 # prevent tty from stopping
 stty stop undef
