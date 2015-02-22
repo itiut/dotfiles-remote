@@ -3,16 +3,24 @@
 [core]
 	editor = vim
 	pager = less -r
-[color]
-	ui = auto
-[push]
-	default = simple
+	excludesfile = ~/.gitignore_global
 [branch]
 	autosetuprebase = always
+[color]
+	ui = auto
+[fetch]
+	prune = true
 [merge]
 	ff = false
 [pull]
 	rebase = true
+[push]
+	default = simple
+[url "git://github.com/"]
+	insteadOf = https://github.com/
+[url "git@github.com:"]
+	pushInsteadOf = git://github.com/
+	pushInsteadOf = https://github.com/
 [alias]
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 	a = add
@@ -27,11 +35,13 @@
 	dc = diff --cached
 	di = diff
 	dic = diff --cached
-	f = fetch --prune
-	fa = fetch --prune --all
+	f = fetch
+	fa = fetch --all
 	fixup = commit --amend -C HEAD
 	info = remote show origin
 	sb = show-branch --all
 	st = status
 	sh = show
 	this = !git init && git add . && git commit -m \"Initial commit\"
+[ghq]
+	root = ~/src
