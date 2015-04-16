@@ -20,6 +20,11 @@ if [ -f "$HOME/.bashrc.$(hostname)" ]; then
     source "$HOME/.bashrc.$(hostname)"
 fi
 
+# host-private
+if [ -f "$HOME/.bashrc.private" ]; then
+    source "$HOME/.bashrc.private"
+fi
+
 # aliases
 alias cp="cp -i"
 alias mv="mv -i"
