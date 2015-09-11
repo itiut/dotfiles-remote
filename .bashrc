@@ -16,8 +16,8 @@ HISTFILESIZE=10000
 PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 
 # host-specific
-if [ -f "$HOME/.bashrc.$(hostname)" ]; then
-    source "$HOME/.bashrc.$(hostname)"
+if [ -f "$HOME/.bashrc.$(hostname -s)" ]; then
+    source "$HOME/.bashrc.$(hostname -s)"
 fi
 
 # host-private
