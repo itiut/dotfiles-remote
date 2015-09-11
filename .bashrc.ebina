@@ -1,0 +1,6 @@
+export HOME1=/export/home1/$USER
+export PATH=$HOME1/bin:/opt/pgsql/bin:$PATH
+VMLINUX_PATH=/usr/lib/debug/lib/modules/$(uname -r)/vmlinux
+if [ -x $VMLINUX_PATH ]; then
+    export VMLINUX_PATH
+fi
