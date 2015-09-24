@@ -15,6 +15,9 @@ HISTFILESIZE=10000
 # prompt
 PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 
+# ignored files on completion
+export FIGNORE="$FIGNORE:DS_Store"
+
 # host-specific
 if [ -f "$HOME/.bashrc.$(hostname -s)" ]; then
     source "$HOME/.bashrc.$(hostname -s)"
