@@ -2,9 +2,12 @@
 LANG=en_US.UTF-8
 
 # path
-if [ -d $HOME/bin ]; then
-    export PATH=$HOME/bin:$PATH
-fi
+export HOME1=/export/home1/$USER
+export VMLINUX_PATH=/usr/lib/debug/lib/modules/$(uname -r)/vmlinux
+
+if [ -d /opt/pgsql/bin ]; then export PATH=/opt/pgsql/bin:$PATH; fi
+if [ -d $HOME/bin ]; then export PATH=$HOME/bin:$PATH; fi
+if [ -d $HOME1/bin ]; then export PATH=$HOME1/bin:$PATH; fi
 
 # history
 shopt -s histappend
@@ -15,17 +18,9 @@ HISTFILESIZE=10000
 # prompt
 PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 
-# ignored files on completion
-export FIGNORE="$FIGNORE:DS_Store"
-
-# host-specific
-if [ -f "$HOME/.bashrc.$(hostname -s)" ]; then
-    source "$HOME/.bashrc.$(hostname -s)"
-fi
-
 # host-private
-if [ -f "$HOME/.bashrc.private" ]; then
-    source "$HOME/.bashrc.private"
+if [ -f $HOME/.bashrc.private ]; then
+  source $HOME/.bashrc.private
 fi
 
 # aliases
