@@ -1,26 +1,57 @@
-# oh-my-zsh
-export ZSH=$HOME/.oh-my-zsh
+### zplug
+source $HOME/src/github.com/b4b4r07/zplug/zplug
 
-## Theme
-ZSH_THEME="bullet-train"
+_omz_libs=(
+  completion
+  directories
+  functions
+  git
+  grep
+  history
+  key-bindings
+  misc
+  termsupport
+  theme-and-appearance
+)
+zplug 'robbyrussell/oh-my-zsh', of:"lib/{${(j:,:)_omz_libs}}.zsh"
+zplug 'itiut/itiut.zsh-theme', of:'itiut.zsh-theme', nice: 19
 
-BULLETTRAIN_DIR_BG=black
-BULLETTRAIN_DIR_FG=011  # yellow
-BULLETTRAIN_DIR_EXTENDED=2
-BULLETTRAIN_GIT_BG=235  # gray
-BULLETTRAIN_GIT_FG=white
-BULLETTRAIN_GIT_CLEAN=" %F{green}✔%F{black}"
-BULLETTRAIN_GIT_DIRTY=" %F{red}✘%F{black}"
+zplug check || zplug install
+zplug load
 
-## Plugins
-plugins=(git)
+### zshoptions
+# completion
+setopt AUTO_LIST
+setopt AUTO_PARAM_KEYS
+setopt AUTO_PARAM_SLASH
+setopt LIST_PACKED
 
-## Initialize oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+# expansion and globbing
+setopt EXTENDED_GLOB
+setopt NO_NOMATCH
 
+# history
+setopt HIST_REDUCE_BLANKS
 
-# User configurations
-export TERM=screen-256color
+# input/output
+setopt CORRECT
+setopt PRINT_EIGHT_BIT
 
-## override bullet-train
-SEGMENT_SEPARATOR=
+# zle
+setopt NO_BEEP
+
+### aliases
+# overrides
+alias cp='cp -i'
+alias ls="$aliases[ls] -F"  # defined in oh-my-zsh/lib/theme-and-appearance.zsh
+alias mv='mv -i'
+alias rm='rm -i'
+
+# abbreviations
+alias g='git'
+alias l='ls'
+alias la='ls -A'
+alias ll='ls -l -a'
+alias t='tig'
+alias ta='tig --all'
+alias v='vim'
