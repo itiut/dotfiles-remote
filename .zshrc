@@ -1,3 +1,6 @@
+### envs
+export TERM=screen-256color
+
 ### zplug
 source $HOME/src/github.com/b4b4r07/zplug/zplug
 
